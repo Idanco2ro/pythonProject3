@@ -1,5 +1,7 @@
 # Imports
 import json
+from sys import implementation
+
 import pandas as pd
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.ensemble import RandomForestClassifier
@@ -102,3 +104,4 @@ losses2 = len(df[(df[f't2_{champ_name}'] == 1) & (df['winner'] == 1)])
 total_games = wins1 + wins2 + losses1 + losses2
 win_ratio = (wins1 + wins2) / total_games if total_games > 0 else 0
 print(f"Win ratio for {champ_name}: {win_ratio:.2f}")
+
